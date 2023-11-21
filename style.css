@@ -1,11 +1,39 @@
 .container {
+    display: flex;
     max-width: 100vw;
     max-height: 100vh;
 }
 
+.sidebar {
+    position: relative;
+}
+
 .sidebar > img {
-    width: 500px;
-    aspect-ratio: 3/4;
+    width: 300px;
+    aspect-ratio: 2/5;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    gap: 2ch;
+    align-items: center;
+    position: absolute;
+    top: calc( (100% - 75px) / 3);
+    width: 100%;
+    background-color: #55555588; 
+}
+
+.banner > div {
+    color: white;
+    font-size: 4rem;
+    font-family: "Roboto Sans", sans;
+    text-transform: uppercase;
+}
+
+.banner > img {
+    width: 75px;
+    aspect-ratio: 2/3;
 }
 
 p {
