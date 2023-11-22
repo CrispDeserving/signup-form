@@ -30,6 +30,8 @@
     top: calc( (100% - 75px) / 4);
     width: 100%;
     background-color: #55555588;
+    font-family: 'DejaVu Serif', sans-serif;
+    padding: 1.5ch;
 }
 
 .banner > div {
@@ -45,7 +47,6 @@
 
 p {
     font-size: 1rem;
-    color: green;
 }
 
 .main-container {
@@ -53,7 +54,8 @@ p {
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
-    background-color: antiquewhite;
+    background-color: #f2f7f7;
+    box-shadow: 0 1rem 2ch #ddd;
 }
 
 .sales-pitch {
@@ -65,7 +67,7 @@ p {
 
 .sales-pitch > p {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 150%;
     padding: 0 3rem;
 }
 
@@ -82,6 +84,7 @@ form .form-wrapper {
     width: 100%;
     background-color: #fff;
     padding: 2rem 3rem;
+    box-shadow: 0 0.25rem 1ch #ccc;
 }
 
 form h2 {
@@ -110,6 +113,7 @@ form h2 {
     padding: 0.5ch 1ch;
     border: 3px solid #ddd;
     border-radius: 0.6ch;
+    background-color: #f9ffff;
 }
 
 input:focus {
@@ -126,13 +130,23 @@ input:focus {
 }
 
 .form-btn {
-    width: 200px;
-    padding: 1ch 2rem;
+    width: 280px;
+    padding: 1.5ch 2rem;
     font-weight: bold;
+    font-size: 120%;
+    line-height: 120%;
+    color: white;
+    background-color: #35662c;
+    border: none;
+    border-radius: 1ch;
 }
 
 .another-option {
     font-weight: bold;
+}
+
+.another-option a {
+    color: #35662c;
 }
 
 /* Use noto sans as logo text */
