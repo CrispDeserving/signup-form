@@ -29,7 +29,7 @@
     position: absolute;
     top: calc( (100% - 75px) / 4);
     width: 100%;
-    background-color: #55555588; 
+    background-color: #55555588;
 }
 
 .banner > div {
@@ -66,19 +66,26 @@ p {
 .sales-pitch > p {
     font-weight: 600;
     font-size: 1.5rem;
-    padding: 0 2rem;
+    padding: 0 3rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
-.form-wrapper {
+form .form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     width: 100%;
     background-color: #fff;
-    padding: 2rem;
+    padding: 2rem 3rem;
+}
+
+form h2 {
+    font-size: 200%;
 }
 
 .form-wrapper ul {
@@ -94,19 +101,28 @@ form {
 }
 
 .input-wrapper label {
-    font-weight: bold;
     text-transform: uppercase;
 }
 
 .input-wrapper input {
     width: 100%;
+    font-size: 120%;
+    padding: 0.5ch 1ch;
+    border: 3px solid #ddd;
+    border-radius: 0.6ch;
+}
+
+input:focus {
+    border-color: #6397eb;
+    box-shadow: 0 0.4ch 0.2ch #ccc;
+    outline: none;
 }
 
 .signin-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 0 2rem;
+    gap: 1.5rem;
+    padding: 0 3rem;
 }
 
 .form-btn {
@@ -118,4 +134,5 @@ form {
 .another-option {
     font-weight: bold;
 }
+
 /* Use noto sans as logo text */
