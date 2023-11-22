@@ -1,6 +1,8 @@
 :root {
     --main-container-padding:  4rem;
+    --submit-green: #35662c;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -139,9 +141,18 @@ input:focus {
     font-size: 120%;
     line-height: 120%;
     color: white;
-    background-color: #35662c;
+    background-color: var(--submit-green);
     border: none;
     border-radius: 1ch;
+    transition: all ease 0.25s;
+}
+
+.form-btn:focus,
+.form-btn:hover
+{
+    border: none;
+    outline: none;
+    transform: scale(105%);
 }
 
 .another-option {
@@ -149,7 +160,7 @@ input:focus {
 }
 
 .another-option a {
-    color: #35662c;
+    color: var(--submit-green); 
 }
 
 /* Use noto sans as logo text */
