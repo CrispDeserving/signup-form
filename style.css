@@ -35,14 +35,15 @@
     top: calc( (100% - 75px) / 4);
     width: 100%;
     background-color: #55555588;
-    font-family: 'DejaVu Serif', sans-serif;
     padding: 1.5ch;
 }
 
 .banner > div {
     color: white;
-    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 6rem;
     text-transform: uppercase;
+    font-style: italic;
 }
 
 .banner > img {
@@ -105,6 +106,8 @@ form h2 {
 }
 
 .input-wrapper {
+    display: flex;
+    flex-direction: column;
     width: 300px;
 }
 
@@ -116,12 +119,20 @@ form h2 {
     width: 100%;
     font-size: 120%;
     padding: 0.5ch 1ch;
-    border: 3px solid #ddd;
-    border-radius: 0.6ch;
     background-color: #f9ffff;
+    border: 2px solid #ddd;
+    border-radius: 0.6ch;
 }
 
-input:focus {
+.input-wrapper input::placeholder {
+    color: #aaa;
+}
+
+.input-wrapper input:invalid {
+    border-color: red;
+}
+
+.input-wrapper input:focus {
     border-color: #6397eb;
     box-shadow: 0 0.4ch 0.2ch #ccc;
     outline: none;
@@ -144,6 +155,7 @@ input:focus {
     background-color: var(--submit-green);
     border: none;
     border-radius: 1ch;
+    box-shadow: 0 0.5ch 1ch #bbb;
     transition: all ease 0.25s;
 }
 
