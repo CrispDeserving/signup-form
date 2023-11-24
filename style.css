@@ -23,7 +23,8 @@
 
 .sidebar > img {
     width: 100%;
-    aspect-ratio: 2/5;
+    height: 100vh;
+    object-fit: cover;
 }
 
 .banner {
