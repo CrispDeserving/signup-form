@@ -29,9 +29,49 @@ function submit_form_handler(event) {
 	const inputs = form.querySelectorAll("li input");
 
 	for (const input of inputs) {
+		let input_invalid = false;
 		if (input_check_if_empty(input)) {
+			input_invalid = true;
+		}
+
+		if (input.validity.typeMismatch) {
+			let type_string = "";
+			switch (input.type) {
+				case "email":
+					type_string = "email";
+				break;
+
+				case "tel":
+					type_string = "number";
+				break;
+				
+				default:
+					type_string = "template";
+				break;
+			}
+
+			console.log("here");
+			input.setCustomValidity(`Input does not look like ${type_string}.`);
+			input_invalid = true;
+		}
+
+		if (input_invalid) {
 			input.reportValidity();
-			break;
+			return;
 		}
 	}
+
+	const password = form.querySelector("#password");
+	const password_confirm = form.querySelector("#password-confirm");
+
+	if (password.value !== password_confirm.value) {
+		password.setCustomValidity("Passwords must match.");
+		password_confirm.setCustomValidity("Passwords must match.");
+
+		password.reportValidity();
+		return;
+	}
+
+	form.submit();
+	alert("Form submitted!");
 }
