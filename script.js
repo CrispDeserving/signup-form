@@ -1,8 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
 	const form = document.querySelector(".main-container form");
 	const inputs = document.querySelectorAll("form input");
-	const password = form.querySelector("#password");
-	const password_confirm = form.querySelector("#password-confirm");
 
 	form.addEventListener("submit", submit_form_handler);
 	
@@ -12,14 +10,13 @@ window.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	for (const password_input of [password, password_confirm]) {
-		password_input.addEventListener("input", () => {
-			verify_passwords_match(password, password_confirm);
-		});
-	}
+	verify_passwords_match(form);
 });
 
-function verify_passwords_match(password, password_confirm) {
+function verify_passwords_match(form) {
+	const password = form.querySelector("#password");
+	const password_confirm = form.querySelector("#password-confirm");
+
 	if (password.value !== password_confirm.value) {
 		password.setCustomValidity("Passwords must match.");
 		password_confirm.setCustomValidity("Passwords must match.");
@@ -82,8 +79,7 @@ function submit_form_handler(event) {
 	}
 	
 	const password = form.querySelector("#password");
-	const password_confirm = form.querySelector("#password-confirm");
-	if (!verify_passwords_match(password, password_confirm)) {
+	if (!verify_passwords_match(form)) {
 		password.reportValidity();
 		return;
 	}
@@ -91,3 +87,4 @@ function submit_form_handler(event) {
 	// form.submit();
 	alert("Form submitted!");
 }
+
