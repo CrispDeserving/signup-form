@@ -147,6 +147,12 @@ form h2 {
     outline: none;
 }
 
+.error-text {
+    font-size: 80%;
+    text-transform: uppercase;
+    color: red;
+}
+
 .signin-wrapper {
     display: flex;
     flex-direction: column;

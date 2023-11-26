@@ -10,21 +10,31 @@ window.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	verify_passwords_match(form);
+	const passwords = form.querySelectorAll("input[type='password']");
+	for (const password of passwords) {
+		password.addEventListener("input", () => {
+			verify_passwords_match(form);
+		});
+	}
 });
 
 function verify_passwords_match(form) {
 	const password = form.querySelector("#password");
 	const password_confirm = form.querySelector("#password-confirm");
+	const error = document.querySelector(".error-text");
 
 	if (password.value !== password_confirm.value) {
 		password.setCustomValidity("Passwords must match.");
 		password_confirm.setCustomValidity("Passwords must match.");
+
+		error.textContent = "* passwords do not match";
 		return false;
 	}
 
 	password.setCustomValidity("");
 	password_confirm.setCustomValidity("");
+
+	error.textContent = "";
 	return true;
 }
 
